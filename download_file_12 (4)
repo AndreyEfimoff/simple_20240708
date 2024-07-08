@@ -1,0 +1,116 @@
+{
+    "ClientConfiguration": {
+        "ConfigurationName": "Маркировка",
+        "ConfigurationDescription": "Маркировка",
+        "ConfigurationVersion": "0.0.2",
+        "Processes": [
+            {
+                "ProcessName": "1. Мои задания",
+                "type": "Process",
+                "Operations": [
+                    {
+                        "type": "Operation",
+                        "Name": "Загрузка",
+                        "Elements": [
+                            {
+                                "type": "LinearLayout",
+                                "orientation": "vertical",
+                                "height": "match_parent",
+                                "width": "match_parent",
+                                "Elements": [
+                                    {
+                                        "type": "Button",
+                                        "orientation": "vertical",
+                                        "height": "wrap_content",
+                                        "width": "match_parent",
+                                        "Value": "Загрузить задание на ТСД",
+                                        "Variable": "btn_download",
+                                        "type_s": "Кнопка",
+                                        "weight": "0",
+                                        "width_value": "match_parent",
+                                        "height_value": "wrap_content"
+                                    },
+                                    {
+                                        "type": "CardsLayout",
+                                        "orientation": "vertical",
+                                        "height": "match_parent",
+                                        "width": "match_parent",
+                                        "Value": "@cards",
+                                        "Variable": "cards",
+                                        "type_s": "Список карточек",
+                                        "weight": "0",
+                                        "width_value": "match_parent",
+                                        "height_value": "match_parent"
+                                    }
+                                ],
+                                "type_s": "Контейнер",
+                                "weight": "0",
+                                "width_value": "match_parent",
+                                "height_value": "match_parent"
+                            }
+                        ],
+                        "Handlers": [
+                            {
+                                "event": "onInput",
+                                "action": "run",
+                                "listener": "btn_download",
+                                "type": "online",
+                                "method": "ЗагрузитьВБД",
+                                "postExecute": "",
+                                "alias": ""
+                            },
+                            {
+                                "event": "onStart",
+                                "action": "runprogress",
+                                "listener": "",
+                                "type": "online",
+                                "method": "ДокументыПриОткрытии",
+                                "postExecute": "[{\"action\": \"run\", \"type\": \"set\", \"method\": \"RefreshScreen\"}]",
+                                "alias": ""
+                            },
+                            {
+                                "event": "onInput",
+                                "action": "run",
+                                "listener": "LayoutAction",
+                                "type": "set",
+                                "method": "noRefresh",
+                                "postExecute": "",
+                                "alias": ""
+                            }
+                        ],
+                        "hideBottomBarScreen": true
+                    }
+                ]
+            }
+        ],
+        "ConfigurationSettings": {
+            "uid": "33ff4e688dd04fc7bb24e702500c278a",
+            "dictionaries": "",
+            "vendor": "",
+            "vendor_url": "",
+            "vendor_password": "",
+            "handler_split_mode": false,
+            "handler_url": "",
+            "handler_password": ""
+        },
+        "host_uid": "9a49b2ae59d046d8947ff4ab61f94c2c",
+        "ConfigurationTags": "",
+        "ConfigurationFileName": "download_file_12",
+        "agent": false,
+        "ForegroundService": false,
+        "StopForegroundServiceOnExit": false,
+        "BroadcastIntent": "",
+        "BroadcastVariable": "",
+        "FaceRecognitionURL": "",
+        "OnKeyboardMain": false,
+        "LaunchProcess": "",
+        "LaunchVar": "",
+        "MenuWebTemplate": "",
+        "Launch": "",
+        "HTMLHead": "",
+        "HTMLdocument_ready": "",
+        "PyGeneral": "",
+        "PelicanInit": "",
+        "uid": "3463789b06444555be69baca1528dcf8"
+    }
+}
